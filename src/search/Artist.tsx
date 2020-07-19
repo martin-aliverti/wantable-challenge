@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ArtistHeader from "./ArtistHeader";
+import ArtistBody from "./ArtistBody";
 
 type Props = {
   data: Artist;
@@ -20,7 +21,9 @@ export default ({ data }: Props) => {
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <ArtistHeader name={data.name} listeners={data.listeners} />
       </AccordionSummary>
-      <AccordionDetails>{data.listeners}</AccordionDetails>
+      <AccordionDetails>
+        <ArtistBody name={data.name} doLoad={expanded} />
+      </AccordionDetails>
     </Accordion>
   );
 };
