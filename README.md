@@ -1,5 +1,5 @@
 # Hi Wantable!
-Looking forward to partering with your team to create awesome solutions!
+Looking forward to partnering with your team to create awesome solutions!
 
 ## About this challenge
 - I spent about two hours tackling the basic requirements and a few of the bonus ones
