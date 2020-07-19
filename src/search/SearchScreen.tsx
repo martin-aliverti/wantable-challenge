@@ -19,8 +19,8 @@ export default () => {
   }, [debouncedQuery]);
 
   return (
-    <div style={styles.container}>
-      <Typography>Search for your favourite artists!</Typography>
+    <>
+      <Typography variant="h6">Search for your favourite artists!</Typography>
       <TextField
         placeholder="Artist name"
         onChange={handleChange}
@@ -30,13 +30,6 @@ export default () => {
       {artists.map((artist) => (
         <Artist key={`artist_${artist.name}_${artist.mbid}`} artist={artist} />
       ))}
-    </div>
+    </>
   );
-};
-
-const styles = {
-  container: {
-    width: 500,
-    padding: 20,
-  },
 };
