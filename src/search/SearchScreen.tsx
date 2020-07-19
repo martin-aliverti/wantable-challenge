@@ -28,7 +28,7 @@ export default () => {
         style={{ width: "100%" }}
       />
       {artists.map((artist) => (
-        <Artist key={`artist_${artist.name}_${artist.mbid}`} data={artist} />
+        <Artist key={`artist_${artist.name}_${artist.mbid}`} artist={artist} />
       ))}
     </div>
   );

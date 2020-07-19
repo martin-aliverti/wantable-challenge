@@ -10,19 +10,19 @@ import ArtistHeader from "./ArtistHeader";
 import ArtistBody from "./ArtistBody";
 
 type Props = {
-  data: Artist;
+  artist: Artist;
 };
 
-export default ({ data }: Props) => {
+export default ({ artist }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const handleChange = () => setExpanded((expanded) => !expanded);
   return (
     <Accordion expanded={expanded} onChange={handleChange}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <ArtistHeader name={data.name} listeners={data.listeners} />
+        <ArtistHeader artist={artist} />
       </AccordionSummary>
       <AccordionDetails>
-        <ArtistBody name={data.name} doLoad={expanded} />
+        <ArtistBody name={artist.name} doLoad={expanded} />
       </AccordionDetails>
     </Accordion>
   );
