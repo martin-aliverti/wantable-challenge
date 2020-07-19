@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Typography, TextField } from "@material-ui/core";
 import ArtistService, { Artist as ArtistType } from "../services/ArtistService";
 import useDebounce from "../hooks/useDebounce";
+import Artist from "./Artist";
 
 export default () => {
   const [artists, setArtists] = useState<ArtistType[]>([]);
@@ -26,7 +27,7 @@ export default () => {
         value={searchQuery}
       />
       {artists.map((artist) => (
-        <div>{artist.name}</div>
+        <Artist key={`artist_${artist.name}_${artist.mbid}`} data={artist} />
       ))}
     </div>
   );
