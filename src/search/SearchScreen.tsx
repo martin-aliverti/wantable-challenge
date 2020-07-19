@@ -7,7 +7,7 @@ import Artist from "./Artist";
 export default () => {
   const [artists, setArtists] = useState<ArtistType[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const debouncedQuery = useDebounce(searchQuery, 800);
+  const debouncedQuery = useDebounce(searchQuery, 500);
 
   const handleChange = (event: any) => {
     setSearchQuery(event.target.value);
@@ -25,6 +25,7 @@ export default () => {
         placeholder="Artist name"
         onChange={handleChange}
         value={searchQuery}
+        style={{ width: "100%" }}
       />
       {artists.map((artist) => (
         <Artist key={`artist_${artist.name}_${artist.mbid}`} data={artist} />
