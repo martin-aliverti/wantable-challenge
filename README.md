@@ -1,3 +1,17 @@
+# Hi Wantable!
+Looking forward to partering with your team to create awesome solutions!
+
+## About this challenge
+- I spent about two hours tackling the basic requirements and a few of the bonus ones
+- After lunch and feeding Luna :smile_cat:, I spent about an hour finishing up details and adding the Favorites feature using Context API
+
+## About the tests
+- There are unit tests for the service layer and a very basic UI test. This is where I drew the line because of the time constraints of the challenge, but I would have to add tests for the custom Hooks, and more tests for the UI.
+- My usual approach is TDD for everything functional, especially when my goal is clear. For the UI, in cases where I have to be a bit creative, I might differ the testing, creating a basic view structure first to see if it suits my needs, and then adding more proper testing, and UI details. Like I said, because of the nature and time constraints of this challenge, UI testing was a bit lacking here.
+
+### Looking forward to hearing from you!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
