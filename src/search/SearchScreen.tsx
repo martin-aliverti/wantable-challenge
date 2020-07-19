@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Typography, TextField } from "@material-ui/core";
 import ArtistService, { Artist as ArtistType } from "../services/ArtistService";
+import useDebounce from "../hooks/useDebounce";
 
 export default () => {
   const [artists, setArtists] = useState<ArtistType[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const debouncedQuery = useDebounce(searchQuery, 800);
 
   const handleChange = (event: any) => {
     setSearchQuery(event.target.value);
   };
 
   useEffect(() => {
-    searchQuery.length && ArtistService.search(searchQuery).then(setArtists);
-  }, [searchQuery]);
+    debouncedQuery.length &&
+      ArtistService.search(debouncedQuery).then(setArtists);
+  }, [debouncedQuery]);
 
   return (
     <div style={styles.container}>
